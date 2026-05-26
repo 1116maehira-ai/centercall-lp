@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CenterCall｜電話営業を、データで変える。沖縄特化テレアポ×AI分析</title>
+<meta name="description" content="沖縄県内の中小企業に、1日¥11,000から始められる電話アポイント代行 × AI分析レポート。月縛りなし、地場感覚あり。リフォーム・塗装・看板・WEB制作向け。">
+
+<!-- OGP / SNSシェア用 -->
+<meta property="og:title" content="CenterCall｜電話営業を、データで変える。">
+<meta property="og:description" content="1日¥11,000から試せる、沖縄特化の電話アポ代行×AI分析レポート。「結果報告」ではなく「改善するための毎日のデータ」を売っています。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CenterCall">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CenterCall｜電話営業を、データで変える。">
+<meta name="twitter:description" content="1日¥11,000から試せる、沖縄特化の電話アポ代行×AI分析レポート。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          orange: { DEFAULT: '#f97316', deep: '#ea580c', dark: '#c2410c' },
+          coral: '#ef4444',
+          gold: '#fbbf24',
+          sun: '#fde047',
+          cream: '#fffbf5',
+          sand: '#fef9f0',
+          ink: { DEFAULT: '#1a1a1a', soft: '#404040' },
+          grayish: '#f5f5f4',
+        },
+        fontFamily: {
+          serif: ['"Noto Serif JP"', 'serif'],
+          sans: ['"Noto Sans JP"', 'sans-serif'],
+          inter: ['"Inter"', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #1a1a1a;
+    background: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ===== グラデーション背景 ===== */
+  .bg-sun-fade {
+    background: linear-gradient(180deg, #ffffff 0%, #fff7ed 50%, #ffffff 100%);
+  }
+  .bg-sunset {
+    background: linear-gradient(135deg, #fef9f0 0%, #ffedd5 50%, #fef3c7 100%);
+  }
+  .bg-ink-deep {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+  }
+  .bg-orange-glow {
+    background: linear-gradient(135deg, #f97316 0%, #fb923c 50%, #fbbf24 100%);
+  }
+
+  /* ===== 大見出しセリフ ===== */
+  .display-jp {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+  }
+
+  /* ===== 数字強調 ===== */
+  .num-hero {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ===== セクションタグ ===== */
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #f97316;
+  }
+  .section-tag::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: #f97316;
+  }
+  .section-tag.light { color: #fbbf24; }
+  .section-tag.light::before { background: #fbbf24; }
+
+  /* ===== スクロールリビール ===== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ===== ヘッダーCTA脈動 ===== */
+  .header-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 24px; border-radius: 999px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 900; font-size: 14px; color: white;
+    background: linear-gradient(135deg, #f97316 0%, #fbbf24 50%, #f97316 100%);
+    background-size: 200% 200%;
+    box-shadow: 0 4px 16px rgba(249, 115, 22, 0.4);
+    transition: all 0.3s ease;
+    animation: ctaPulse 1.5s ease-in-out infinite, ctaGradient 3s linear infinite;
+  }
+  .header-cta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.6);
+    animation-play-state: paused;
+  }
+  @keyframes ctaPulse {
+    0%,100% { box-shadow: 0 4px 16px rgba(249, 115, 22, 0.4), 0 0 0 0 rgba(249, 115, 22, 0.6); }
+    50% { box-shadow: 0 6px 24px rgba(249, 115, 22, 0.6), 0 0 0 8px rgba(249, 115, 22, 0); }
+  }
+  @keyframes ctaGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  @media (max-width: 768px) {
+    .header-cta { padding: 10px 18px; font-size: 13px; }
+  }
+
+  /* ===== CTAボタン ===== */
+  .btn-primary {
+    background: #f97316; color: white;
+    padding: 18px 36px; border-radius: 999px;
+    font-weight: 700;
+    display: inline-flex; align-items: center; gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(249, 115, 22, 0.5);
+    background: #ea580c;
+  }
+  .btn-secondary {
+    background: white; color: #1a1a1a;
+    padding: 18px 36px; border-radius: 999px;
+    font-weight: 700;
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 1.5px solid #1a1a1a;
+    transition: all 0.3s ease;
+  }
+  .btn-secondary:hover { background: #1a1a1a; color: white; }
+
+  /* ===== バッジ ===== */
+  .badge-trust {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(251, 191, 36, 0.15);
+    border: 1px solid rgba(251, 191, 36, 0.5);
+    padding: 6px 14px; border-radius: 999px;
+    font-size: 12px; font-weight: 600;
+    color: #92400e;
+  }
+  .badge-orange {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    padding: 6px 14px; border-radius: 999px;
+    font-size: 12px; font-weight: 700;
+    color: #c2410c;
+  }
+
+  /* ===== チェックリスト ===== */
+  .checklist-item {
+    display: flex; gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(26,26,26,0.08);
+  }
+  .checklist-item:last-child { border-bottom: none; }
+  .checklist-box {
+    flex-shrink: 0;
+    width: 24px; height: 24px;
+    border: 2px solid #f97316;
+    border-radius: 4px; margin-top: 4px;
+    position: relative;
+  }
+  .checklist-box::after {
+    content: '✓'; position: absolute;
+    top: -2px; left: 4px;
+    font-size: 18px; font-weight: 900;
+    color: #f97316;
+  }
+
+  /* ===== カード ===== */
+  .feature-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid rgba(26,26,26,0.06);
+    transition: all 0.4s ease;
+  }
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 48px -12px rgba(26,26,26,0.12);
+    border-color: rgba(249, 115, 22, 0.3);
+  }
+
+  /* ===== 差別化番号 ===== */
+  .diff-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; font-weight: 700;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%);
+    color: white;
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
+  }
+
+  /* ===== FAQ ===== */
+  .faq-item { border-bottom: 1px solid rgba(26,26,26,0.1); }
+  .faq-trigger {
+    width: 100%; text-align: left;
+    padding: 24px 0;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 24px;
+    font-weight: 700; color: #1a1a1a;
+    font-size: 17px;
+    cursor: pointer;
+  }
+  .faq-trigger .icon {
+    flex-shrink: 0;
+    width: 28px; height: 28px;
+    border: 1.5px solid #f97316;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s ease;
+    color: #f97316;
+  }
+  .faq-item.open .faq-trigger .icon {
+    background: #f97316; color: white;
+    transform: rotate(45deg);
+  }
+  .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .faq-content-inner {
+    padding-bottom: 24px;
+    color: rgba(26,26,26,0.7);
+    line-height: 1.8;
+  }
+
+  /* ===== ナビ ===== */
+  .nav-link {
+    color: rgba(26,26,26,0.7);
+    font-size: 14px; font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .nav-link:hover { color: #f97316; }
+
+  /* ===== ヒーロー ===== */
+  .hero-stage {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #ffffff;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .hero-bg-image {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(110deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.85) 45%, rgba(255,255,255,0.3) 70%, rgba(0,0,0,0.05) 100%);
+    z-index: 1;
+  }
+  .hero-canvas {
+    position: relative; z-index: 3;
+    padding: 120px 24px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* スクロールダウン縦テキスト */
+  .scroll-down-vertical {
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    writing-mode: vertical-rl;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    color: rgba(26,26,26,0.5);
+    z-index: 4;
+  }
+  .scroll-down-vertical::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 40px;
+    background: rgba(26,26,26,0.3);
+    margin-top: 16px;
+    animation: scrollDot 2s ease-in-out infinite;
+  }
+  @keyframes scrollDot {
+    0%,100% { transform: scaleY(0.4); transform-origin: top; opacity: 0.3; }
+    50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  }
+
+  /* ===== 数字カウンタ ===== */
+  .stat-circle {
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    background: white;
+    box-shadow: 0 20px 40px -10px rgba(249, 115, 22, 0.2);
+    border: 4px solid #fef3c7;
+  }
+  .stat-circle.orange { border-color: #f97316; background: #fff7ed; }
+  .stat-circle.yellow { border-color: #fbbf24; background: #fffbeb; }
+  .stat-circle.red { border-color: #ef4444; background: #fef2f2; }
+
+  /* ===== 報告書モック ===== */
+  .report-mock {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 32px 64px -16px rgba(26,26,26,0.15);
+    overflow: hidden;
+    border: 1px solid rgba(26,26,26,0.06);
+  }
+  .report-mock-header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: white;
+    padding: 16px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  /* ===== 価格カード ===== */
+  .price-card {
+    background: white;
+    border-radius: 20px;
+    padding: 32px 24px;
+    border: 1px solid rgba(26,26,26,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  .price-card:hover { transform: translateY(-4px); border-color: rgba(249, 115, 22, 0.4); }
+  .price-card.featured {
+    background: #1a1a1a; color: white;
+    border-color: #1a1a1a;
+    transform: scale(1.04);
+  }
+  .price-card.featured:hover { transform: scale(1.04) translateY(-4px); }
+  .price-card.trial { border: 2px solid #f97316; }
+  .price-card.trial::before {
+    content: 'お試し限定';
+    position: absolute;
+    top: -14px; left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #f97316, #fbbf24);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 900;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+  }
+
+  /* ===== 比較表 ===== */
+  .compare-table { border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px -8px rgba(26,26,26,0.08); }
+  .compare-header { background: #1a1a1a; color: white; }
+  .compare-header .our { background: #f97316; }
+  .compare-row { background: white; border-top: 1px solid rgba(26,26,26,0.06); }
+  .compare-row .our { background: #fff7ed; font-weight: 700; color: #c2410c; }
+
+  /* ===== タイムライン ===== */
+  .timeline-step {
+    position: relative;
+    padding: 24px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+  }
+
+  /* ===== 業界カード ===== */
+  .industry-card {
+    background: white;
+    border-radius: 20px;
+    padding: 32px;
+    border: 1px solid rgba(26,26,26,0.08);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .industry-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 4px;
+    background: linear-gradient(90deg, #f97316, #fbbf24);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .industry-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -12px rgba(26,26,26,0.1); }
+  .industry-card:hover::before { transform: scaleX(1); }
+
+  /* ===== モーフィング背景 ===== */
+  .blob-bg {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.4;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* ===== 写真 with 装飾 ===== */
+  .photo-frame {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 32px 64px -16px rgba(26,26,26,0.2);
+  }
+  .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+  .photo-tag {
+    position: absolute;
+    background: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(26,26,26,0.1);
+    font-weight: 700;
+  }
+
+  /* === 行動規範 === */
+  .ethics-item {
+    background: white;
+    padding: 32px 24px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid rgba(26,26,26,0.06);
+    transition: all 0.3s ease;
+  }
+  .ethics-item:hover { transform: translateY(-4px); border-color: #f97316; }
+  .ethics-num-big {
+    font-family: 'Inter', sans-serif;
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1;
+    color: #f97316;
+    margin-bottom: 16px;
+    letter-spacing: -0.03em;
+  }
+
+  /* === コミットメント === */
+  .commitment-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 36px 28px;
+    transition: all 0.3s ease;
+  }
+  .commitment-card:hover {
+    background: rgba(249, 115, 22, 0.08);
+    border-color: rgba(249, 115, 22, 0.4);
+  }
+
+  /* === レスポンシブ === */
+  @media (max-width: 768px) {
+    .hero-canvas { padding: 100px 20px 60px; }
+    .stat-circle { width: 140px; height: 140px; }
+    .compare-table { font-size: 12px; }
+    .price-card.featured { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== ナビゲーション ===== -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-lg border-b border-black/5">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#" class="flex items-baseline gap-2">
+      <span class="display-jp text-xl text-ink">CenterCall</span>
+      <span class="text-[10px] tracking-widest text-ink-soft/60 font-inter font-semibold uppercase">by Tenohira</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#value" class="nav-link">3つの価値</a>
+      <a href="#daily" class="nav-link">1日の流れ</a>
+      <a href="#pricing" class="nav-link">料金</a>
+      <a href="#industry" class="nav-link">業界別</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+    </div>
+    <a href="#contact" class="header-cta">
+      無料相談する
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero-stage">
+  <img src="images/hero-call-man.png" alt="営業電話をするビジネスパーソン" class="hero-bg-image">
+  <div class="hero-overlay"></div>
+  <div class="scroll-down-vertical">SCROLL</div>
+
+  <div class="hero-canvas">
+    <div class="max-w-3xl">
+      <div class="section-tag mb-8 reveal">CenterCall · 2026 · Okinawa</div>
+      <h1 class="hero-title display-jp text-5xl md:text-7xl lg:text-8xl mb-6 reveal reveal-delay-1">
+        電話営業を、<br>
+        <span class="text-orange">データ</span>で変える。
+      </h1>
+      <p class="text-lg md:text-xl text-ink-soft mb-8 leading-relaxed font-medium reveal reveal-delay-2">
+        沖縄県内の中小企業に、1日¥11,000から始められる<br class="hidden md:block">
+        電話アポイント代行 × AI分析レポート。
+      </p>
+      <div class="flex flex-wrap gap-4 mb-10 reveal reveal-delay-3">
+        <span class="badge-orange">🔥 月縛りなし・1日から</span>
+        <span class="badge-trust">沖縄特化・地場感覚あり</span>
+        <span class="badge-orange">📊 当日中にAI分析レポート</span>
+      </div>
+      <div class="flex flex-wrap gap-4 reveal reveal-delay-4">
+        <a href="#contact" class="btn-primary">
+          まず1日¥11,000で試す
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#daily" class="btn-secondary">
+          サービスを見る ↓
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS BAR ===== -->
+<section class="py-16 bg-sun-fade relative overflow-hidden">
+  <div class="blob-bg" style="width:300px; height:300px; background:#fbbf24; top:-100px; left:-100px;"></div>
+  <div class="blob-bg" style="width:400px; height:400px; background:#f97316; bottom:-150px; right:-150px;"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+      <div class="text-center reveal">
+        <div class="num-hero text-5xl md:text-6xl text-orange mb-2">¥11,000</div>
+        <div class="text-sm text-ink-soft font-semibold">初日トライアル</div>
+        <div class="text-xs text-ink-soft/60 mt-1">新規限定・1回のみ</div>
+      </div>
+      <div class="text-center reveal reveal-delay-1">
+        <div class="num-hero text-5xl md:text-6xl text-ink mb-2">70<span class="text-2xl">本</span></div>
+        <div class="text-sm text-ink-soft font-semibold">毎日の架電数</div>
+        <div class="text-xs text-ink-soft/60 mt-1">全通話、文字起こし</div>
+      </div>
+      <div class="text-center reveal reveal-delay-2">
+        <div class="num-hero text-5xl md:text-6xl text-gold mb-2">18:00</div>
+        <div class="text-sm text-ink-soft font-semibold">レポート納品時刻</div>
+        <div class="text-xs text-ink-soft/60 mt-1">当日中に翌日提案まで</div>
+      </div>
+      <div class="text-center reveal reveal-delay-3">
+        <div class="num-hero text-5xl md:text-6xl text-coral mb-2">1<span class="text-2xl">日</span></div>
+        <div class="text-sm text-ink-soft font-semibold">最短契約単位</div>
+        <div class="text-xs text-ink-soft/60 mt-1">月縛り、ありません</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROBLEM ===== -->
+<section class="py-24 md:py-32 bg-white relative">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-5 reveal">
+        <div class="section-tag mb-6">01 — The Problem</div>
+        <h2 class="display-jp text-4xl md:text-5xl mb-6">
+          営業を強化したい。<br>
+          でも、<span class="text-orange">重いんだ</span>。
+        </h2>
+        <p class="text-ink-soft leading-relaxed mb-8">
+          リフォーム・塗装・看板・WEB制作—<br>
+          多くの中小企業の経営者がぶつかる、共通の壁。<br>
+          CenterCallは、<strong class="text-ink">この4つの「重い」を全部ひっくり返す</strong>設計でつくりました。
+        </p>
+        <div class="photo-frame mt-12" style="height: 300px;">
+          <img src="images/woman-call.png" alt="営業電話をする女性">
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 reveal reveal-delay-1">
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div class="feature-card">
+            <div class="diff-num mb-4">01</div>
+            <h3 class="font-bold text-lg mb-3">月¥30万コミットが重い</h3>
+            <p class="text-sm text-ink-soft leading-relaxed">「とりあえず試したい」のに、契約期間に縛りがある。失敗すれば、30〜90万が消える。</p>
+          </div>
+          <div class="feature-card">
+            <div class="diff-num mb-4">02</div>
+            <h3 class="font-bold text-lg mb-3">結果しか返ってこない</h3>
+            <p class="text-sm text-ink-soft leading-relaxed">「取れた／取れなかった」だけ。なぜダメだったか、明日どう動くかは見えない。</p>
+          </div>
+          <div class="feature-card">
+            <div class="diff-num mb-4">03</div>
+            <h3 class="font-bold text-lg mb-3">社内に専属を抱えられない</h3>
+            <p class="text-sm text-ink-soft leading-relaxed">アポインターの採用・育成・労務まで考えると、コストは月¥30万では済まない。</p>
+          </div>
+          <div class="feature-card">
+            <div class="diff-num mb-4">04</div>
+            <h3 class="font-bold text-lg mb-3">県外代行は地場感覚がない</h3>
+            <p class="text-sm text-ink-soft leading-relaxed">沖縄の商習慣・地域名・人脈感を理解しない営業電話は、受付で違和感を与える。</p>
+          </div>
+        </div>
+        <div class="bg-ink-deep text-white rounded-2xl p-8 mt-8 flex items-center gap-4">
+          <div class="text-orange text-3xl">→</div>
+          <p class="text-lg font-semibold">この4つの「重い」を、全部ひっくり返す設計でつくりました。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VALUE (3つのコア価値) ===== -->
+<section id="value" class="py-24 md:py-32 bg-sunset relative overflow-hidden">
+  <div class="blob-bg" style="width:500px; height:500px; background:#fbbf24; top:-200px; right:-200px;"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-16 reveal">
+      <div class="section-tag justify-center mb-6">02 — Our Core Value</div>
+      <h2 class="display-jp text-4xl md:text-6xl mb-6">
+        他のテレアポ代行と<br>
+        <span class="text-orange">決定的に違う</span>、3つの設計思想
+      </h2>
+      <p class="text-ink-soft text-lg max-w-2xl mx-auto">「コミットの軽さ」「データの厚み」「地場の感覚」</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8">
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="text-7xl font-inter font-bold text-orange/30 mb-4 leading-none">01</div>
+        <div class="badge-orange mb-4">Frictionless Start</div>
+        <h3 class="display-jp text-2xl mb-4">1日¥11,000で<br>試せる</h3>
+        <p class="text-ink-soft leading-relaxed text-sm mb-6">
+          「3ヶ月縛り」を捨てた。まず1日試して、合えば翌日¥22,000で継続。<br>
+          合わなければそこで終わり。<strong class="text-orange">コミット先行ではなく、納得先行。</strong>
+        </p>
+        <div class="bg-cream rounded-xl p-4 text-xs text-ink-soft border border-orange/20">
+          <strong class="text-orange">→ 損する可能性ゼロ</strong>でスタートできる。
+        </div>
+      </div>
+
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="text-7xl font-inter font-bold text-orange/30 mb-4 leading-none">02</div>
+        <div class="badge-orange mb-4">Data-Driven Loop</div>
+        <h3 class="display-jp text-2xl mb-4">電話を、毎日<br>データ資産に変える</h3>
+        <p class="text-ink-soft leading-relaxed text-sm mb-6">
+          全通話を録音 → AIで文字起こし → 拒否理由を分類 → 明日のスクリプト改善まで、当日中に納品。<br>
+          <strong class="text-orange">結果報告ではなく、改善設計。</strong>
+        </p>
+        <div class="bg-cream rounded-xl p-4 text-xs text-ink-soft border border-orange/20">
+          <strong class="text-orange">→ 毎日18時</strong>にAI分析レポート。
+        </div>
+      </div>
+
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="text-7xl font-inter font-bold text-orange/30 mb-4 leading-none">03</div>
+        <div class="badge-orange mb-4">Okinawa Native</div>
+        <h3 class="display-jp text-2xl mb-4">沖縄の会社が、<br>沖縄の感覚でかける</h3>
+        <p class="text-ink-soft leading-relaxed text-sm mb-6">
+          県内の業界・商習慣・人脈感をわかった上で電話を設計。「県外コールセンターの違和感」がない。<br>
+          <strong class="text-orange">単なる代行ではなく、地場パートナー。</strong>
+        </p>
+        <div class="bg-cream rounded-xl p-4 text-xs text-ink-soft border border-orange/20">
+          <strong class="text-orange">→ 全アポインター</strong>沖縄拠点。
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-20 text-center reveal reveal-delay-4">
+      <p class="display-jp text-2xl md:text-3xl">
+        <span class="text-ink-soft/50 line-through">結果報告だけのテレアポは、</span><br>
+        <span class="text-orange">もう終わり。</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DAILY OPERATION ===== -->
+<section id="daily" class="py-24 md:py-32 bg-ink-deep text-white relative overflow-hidden">
+  <div class="blob-bg" style="width:400px; height:400px; background:#f97316; top:-100px; left:-100px; opacity:0.15;"></div>
+  <div class="blob-bg" style="width:500px; height:500px; background:#fbbf24; bottom:-200px; right:-200px; opacity:0.1;"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="grid lg:grid-cols-12 gap-12 items-center mb-16">
+      <div class="lg:col-span-7 reveal">
+        <div class="section-tag light mb-6">03 — Daily Operation</div>
+        <h2 class="display-jp text-4xl md:text-6xl mb-6">
+          CenterCallの1日。<br>
+          <span class="text-gold">9時から18時まで</span>。
+        </h2>
+        <p class="text-white/70 text-lg leading-relaxed">
+          毎日70本の架電。全通話録音。当日中にAI分析レポートが届く。<br>
+          クライアントは何もしなくていい。
+        </p>
+      </div>
+      <div class="lg:col-span-5 reveal reveal-delay-1">
+        <div class="photo-frame" style="height: 320px;">
+          <img src="images/operator-headset-1.png" alt="ヘッドセットでオフィス通話するオペレーター">
+        </div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-5 gap-4">
+      <div class="timeline-step reveal">
+        <div class="font-inter text-gold font-bold text-sm mb-3">09:00</div>
+        <div class="w-3 h-3 rounded-full bg-orange mb-4"></div>
+        <div class="font-bold mb-2">朝の準備</div>
+        <p class="text-xs text-white/60 leading-relaxed">リスト確認<br>A/Bスクリプト選定<br>録音システム動作確認</p>
+      </div>
+      <div class="timeline-step reveal reveal-delay-1">
+        <div class="font-inter text-gold font-bold text-sm mb-3">09:30</div>
+        <div class="w-3 h-3 rounded-full bg-orange mb-4"></div>
+        <div class="font-bold mb-2">午前架電</div>
+        <p class="text-xs text-white/60 leading-relaxed">35本架電<br>全通話を録音<br>結果を即時記録</p>
+      </div>
+      <div class="timeline-step reveal reveal-delay-2">
+        <div class="font-inter text-gold font-bold text-sm mb-3">13:00</div>
+        <div class="w-3 h-3 rounded-full bg-gold mb-4"></div>
+        <div class="font-bold mb-2">午後架電</div>
+        <p class="text-xs text-white/60 leading-relaxed">35本架電<br>別スクリプト<br>A/Bテストデータ蓄積</p>
+      </div>
+      <div class="timeline-step reveal reveal-delay-3">
+        <div class="font-inter text-gold font-bold text-sm mb-3">17:00</div>
+        <div class="w-3 h-3 rounded-full bg-coral mb-4"></div>
+        <div class="font-bold mb-2">AI分析</div>
+        <p class="text-xs text-white/60 leading-relaxed">Whisperで文字起こし<br>Claudeで分析<br>改善案を自動生成</p>
+      </div>
+      <div class="timeline-step reveal reveal-delay-4">
+        <div class="font-inter text-gold font-bold text-sm mb-3">18:00</div>
+        <div class="w-3 h-3 rounded-full bg-coral mb-4"></div>
+        <div class="font-bold mb-2">レポート納品</div>
+        <p class="text-xs text-white/60 leading-relaxed">PDF/PPTで送付<br>拒否理由・反応率<br>翌日の戦略まで</p>
+      </div>
+    </div>
+
+    <div class="mt-16 text-center reveal">
+      <p class="display-jp text-2xl md:text-3xl">
+        クライアントは何もしなくていい。<br>
+        毎日18時に、<span class="text-gold">改善された営業データ</span>が届く。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AI REPORT SAMPLE ===== -->
+<section class="py-24 md:py-32 bg-sand relative">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <div class="section-tag justify-center mb-6">04 — AI Report Sample</div>
+      <h2 class="display-jp text-4xl md:text-6xl mb-6">
+        毎日18時に届く、<br>
+        <span class="text-orange">AI分析レポート</span>。
+      </h2>
+      <p class="text-ink-soft text-lg">実際のレポートには、これらが当日中に揃って届きます。</p>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-8 items-start">
+      <!-- レポートモック -->
+      <div class="lg:col-span-7 reveal">
+        <div class="report-mock">
+          <div class="report-mock-header">
+            <div>
+              <div class="font-bold">Daily Report</div>
+              <div class="text-xs text-white/60 mt-1">沖縄リフォーム業界 攻めリスト</div>
+            </div>
+            <div class="text-xs text-white/60 font-inter">2026-05-25</div>
+          </div>
+          <div class="p-8">
+            <div class="grid grid-cols-3 gap-4 mb-8">
+              <div class="text-center bg-cream rounded-2xl p-4">
+                <div class="num-hero text-4xl text-ink">70</div>
+                <div class="text-xs text-ink-soft mt-1 font-semibold">架電本数</div>
+              </div>
+              <div class="text-center bg-cream rounded-2xl p-4">
+                <div class="num-hero text-4xl text-orange">62<span class="text-xl">%</span></div>
+                <div class="text-xs text-ink-soft mt-1 font-semibold">接続率</div>
+              </div>
+              <div class="text-center bg-cream rounded-2xl p-4">
+                <div class="num-hero text-4xl text-coral">3</div>
+                <div class="text-xs text-ink-soft mt-1 font-semibold">アポ獲得</div>
+              </div>
+            </div>
+
+            <div class="mb-2 text-xs font-bold text-ink-soft uppercase tracking-widest">拒否理由 TOP3</div>
+            <div class="space-y-3 mb-6">
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span>「間に合ってる」</span>
+                  <span class="font-inter font-bold text-orange">70%</span>
+                </div>
+                <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+                  <div class="h-full bg-orange rounded-full" style="width:70%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span>「担当者不在」</span>
+                  <span class="font-inter font-bold text-gold">55%</span>
+                </div>
+                <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+                  <div class="h-full bg-gold rounded-full" style="width:55%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span>「予算がない」</span>
+                  <span class="font-inter font-bold text-coral">40%</span>
+                </div>
+                <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+                  <div class="h-full bg-coral rounded-full" style="width:40%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-orange/10 to-gold/10 border border-orange/30 rounded-xl p-4">
+              <div class="flex gap-3">
+                <div class="text-2xl">🔥</div>
+                <div>
+                  <div class="font-bold text-orange-dark text-sm mb-1">明日の推奨トーク改善案</div>
+                  <div class="text-sm text-ink-soft">冒頭で「リフォーム業者向け」と限定 → <strong class="text-orange">反応率+15%見込み</strong></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- レポート構成リスト -->
+      <div class="lg:col-span-5 reveal reveal-delay-1">
+        <div class="text-sm font-bold uppercase tracking-widest text-orange mb-6">レポート構成（毎日同じフォーマット）</div>
+        <div class="space-y-1">
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <div><strong>全通話の文字起こし</strong><span class="block text-sm text-ink-soft mt-1">Whisperで日本語精度高</span></div>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <div><strong>接続率・担当者接続率・反応率</strong><span class="block text-sm text-ink-soft mt-1">数字で営業を語る</span></div>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <div><strong>拒否理由カテゴリ TOP3</strong><span class="block text-sm text-ink-soft mt-1">なぜダメだったかが見える</span></div>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <div><strong>スクリプトA/B/Cの反応比較</strong><span class="block text-sm text-ink-soft mt-1">どの言い回しが刺さるか</span></div>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <div><strong>興味反応のあった企業リスト</strong><span class="block text-sm text-ink-soft mt-1">二次架電・資料送付候補</span></div>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <div><strong>明日の推奨アクション・改善トーク案</strong><span class="block text-sm text-ink-soft mt-1">具体的な言い回しまで提案</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section id="pricing" class="py-24 md:py-32 bg-white relative">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <div class="section-tag justify-center mb-6">05 — Pricing</div>
+      <h2 class="display-jp text-4xl md:text-6xl mb-6">
+        まず、<span class="text-orange">¥11,000で1日</span>から。
+      </h2>
+      <p class="text-ink-soft text-lg max-w-2xl mx-auto">
+        初日¥11,000のお試し → 合えば¥22,000/日で継続。<br>
+        すべて単発・単日から発注可能です。
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-4">
+      <div class="price-card trial reveal">
+        <div class="text-xs font-inter uppercase tracking-widest text-orange font-semibold mb-2">First-Day</div>
+        <div class="display-jp text-xl mb-4">お試し</div>
+        <div class="num-hero text-4xl text-orange mb-1">¥11,000</div>
+        <div class="text-xs text-ink-soft mb-6 font-inter">/初日のみ・税別</div>
+        <ul class="space-y-2 text-sm text-ink-soft">
+          <li>・1日70本架電</li>
+          <li>・当日レポート納品</li>
+          <li>・新規限定・1回のみ</li>
+        </ul>
+      </div>
+      <div class="price-card reveal reveal-delay-1">
+        <div class="text-xs font-inter uppercase tracking-widest text-orange font-semibold mb-2">Spot</div>
+        <div class="display-jp text-xl mb-4">単発</div>
+        <div class="num-hero text-4xl text-ink mb-1">¥22,000</div>
+        <div class="text-xs text-ink-soft mb-6 font-inter">/日・税別</div>
+        <ul class="space-y-2 text-sm text-ink-soft">
+          <li>・1日70本架電</li>
+          <li>・当日レポート納品</li>
+          <li>・1日単位で発注</li>
+        </ul>
+      </div>
+      <div class="price-card reveal reveal-delay-2">
+        <div class="text-xs font-inter uppercase tracking-widest text-orange font-semibold mb-2">Weekly</div>
+        <div class="display-jp text-xl mb-4">短期週次</div>
+        <div class="num-hero text-4xl text-ink mb-1">¥66,000</div>
+        <div class="text-xs text-ink-soft mb-6 font-inter">/週・税別</div>
+        <ul class="space-y-2 text-sm text-ink-soft">
+          <li>・週3日の架電</li>
+          <li>・¥22,000 × 3日</li>
+          <li>・週次サマリー付き</li>
+        </ul>
+      </div>
+      <div class="price-card featured reveal reveal-delay-3">
+        <div class="text-xs font-inter uppercase tracking-widest text-gold font-semibold mb-2">Monthly-S · 人気</div>
+        <div class="display-jp text-xl mb-4">月額スタンダード</div>
+        <div class="num-hero text-4xl text-white mb-1">¥220,000</div>
+        <div class="text-xs text-white/60 mb-6 font-inter">/月・税別</div>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li>・月10日の架電</li>
+          <li>・週次レポート</li>
+          <li>・スクリプト改善MTG付き</li>
+        </ul>
+      </div>
+      <div class="price-card reveal reveal-delay-4">
+        <div class="text-xs font-inter uppercase tracking-widest text-orange font-semibold mb-2">Monthly-P</div>
+        <div class="display-jp text-xl mb-4">月額プレミアム</div>
+        <div class="num-hero text-4xl text-ink mb-1">¥380,000</div>
+        <div class="text-xs text-ink-soft mb-6 font-inter">/月・税別</div>
+        <ul class="space-y-2 text-sm text-ink-soft">
+          <li>・月20日の架電</li>
+          <li>・日次・週次・月次レポート</li>
+          <li>・専属プロデューサー対応</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 bg-sand rounded-2xl p-6 text-center reveal">
+      <span class="text-orange font-bold">アポ獲得 ¥1,000/件</span>
+      <span class="mx-3 text-ink-soft/40">·</span>
+      <span class="text-orange font-bold">初期スクリプト構築 ¥30,000</span>
+      <span class="text-sm text-ink-soft">（アポ獲得して初めて発生）</span>
+      <span class="mx-3 text-ink-soft/40">·</span>
+      <span class="text-orange font-bold">紹介プログラム 1社¥30,000還元</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPECTED OUTPUT ===== -->
+<section class="py-24 md:py-32 bg-sun-fade relative overflow-hidden">
+  <div class="blob-bg" style="width:500px; height:500px; background:#fbbf24; top:50%; left:50%; transform:translate(-50%,-50%); opacity:0.15;"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-16 reveal">
+      <div class="section-tag justify-center mb-6">06 — Expected Output</div>
+      <h2 class="display-jp text-4xl md:text-6xl mb-6">
+        数字で見る、<br>
+        CenterCallの<span class="text-orange">期待値</span>。
+      </h2>
+      <p class="text-ink-soft text-lg">月10日（月額スタンダード）稼働時の想定アウトプット — 業界別の参考値です。</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+      <div class="text-center reveal">
+        <div class="stat-circle mx-auto mb-4">
+          <div class="num-hero text-4xl text-ink">700</div>
+          <div class="text-sm text-ink-soft font-semibold">本</div>
+        </div>
+        <div class="font-bold">月間架電数</div>
+        <div class="text-xs text-ink-soft mt-1 font-inter">70本 × 10日</div>
+      </div>
+      <div class="text-center reveal reveal-delay-1">
+        <div class="stat-circle yellow mx-auto mb-4">
+          <div class="num-hero text-4xl text-gold">350</div>
+          <div class="text-sm text-ink-soft font-semibold">件</div>
+        </div>
+        <div class="font-bold">接続成功</div>
+        <div class="text-xs text-ink-soft mt-1 font-inter">接続率 50%</div>
+      </div>
+      <div class="text-center reveal reveal-delay-2">
+        <div class="stat-circle orange mx-auto mb-4">
+          <div class="num-hero text-4xl text-orange">70</div>
+          <div class="text-sm text-ink-soft font-semibold">件</div>
+        </div>
+        <div class="font-bold">担当者接続</div>
+        <div class="text-xs text-ink-soft mt-1 font-inter">担当者接続率 10%</div>
+      </div>
+      <div class="text-center reveal reveal-delay-3">
+        <div class="stat-circle red mx-auto mb-4">
+          <div class="num-hero text-4xl text-coral">7-14</div>
+          <div class="text-sm text-ink-soft font-semibold">件</div>
+        </div>
+        <div class="font-bold">想定アポ獲得</div>
+        <div class="text-xs text-ink-soft mt-1 font-inter">アポ率 1-2%</div>
+      </div>
+    </div>
+
+    <div class="bg-ink-deep text-white rounded-3xl p-8 md:p-12 reveal">
+      <div class="text-center mb-8">
+        <div class="section-tag light justify-center mb-4">Cost Performance</div>
+        <h3 class="display-jp text-3xl">月額スタンダード（¥220,000）のケース</h3>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="text-xs uppercase tracking-widest text-gold mb-2">月額費用</div>
+          <div class="num-hero text-3xl mb-1">¥220,000</div>
+          <div class="text-xs text-white/60">10日稼働</div>
+        </div>
+        <div class="text-center">
+          <div class="text-xs uppercase tracking-widest text-gold mb-2">想定アポ獲得</div>
+          <div class="num-hero text-3xl mb-1">7〜14<span class="text-lg">件</span></div>
+          <div class="text-xs text-white/60">月間</div>
+        </div>
+        <div class="text-center">
+          <div class="text-xs uppercase tracking-widest text-gold mb-2">1アポ実質コスト</div>
+          <div class="num-hero text-3xl text-orange mb-1">¥16k〜32k</div>
+          <div class="text-xs text-white/60">業界平均の1/2</div>
+        </div>
+        <div class="text-center">
+          <div class="text-xs uppercase tracking-widest text-gold mb-2">業界相場との比較</div>
+          <div class="num-hero text-3xl mb-1">1/3〜1/2</div>
+          <div class="text-xs text-white/60">vs ¥50k+/件</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPARE TABLE ===== -->
+<section class="py-24 md:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <div class="section-tag justify-center mb-6">07 — Competitive Edge</div>
+      <h2 class="display-jp text-4xl md:text-6xl mb-6">
+        他のテレアポ代行と、<br>
+        <span class="text-orange">何が違うのか</span>。
+      </h2>
+    </div>
+
+    <div class="compare-table reveal overflow-x-auto">
+      <div class="grid grid-cols-5 compare-header text-sm font-bold">
+        <div class="p-4 text-left">比較項目</div>
+        <div class="p-4 text-center our">CenterCall</div>
+        <div class="p-4 text-center">月固定型</div>
+        <div class="p-4 text-center">コール課金型</div>
+        <div class="p-4 text-center">成果報酬型</div>
+      </div>
+      <div class="grid grid-cols-5 compare-row text-sm">
+        <div class="p-4 font-semibold">始めやすさ</div>
+        <div class="p-4 text-center our">¥11,000で1日</div>
+        <div class="p-4 text-center text-ink-soft">月¥30万コミット</div>
+        <div class="p-4 text-center text-ink-soft">月¥10万〜</div>
+        <div class="p-4 text-center text-ink-soft">月¥0〜</div>
+      </div>
+      <div class="grid grid-cols-5 compare-row text-sm">
+        <div class="p-4 font-semibold">契約期間</div>
+        <div class="p-4 text-center our">1日から</div>
+        <div class="p-4 text-center text-ink-soft">3ヶ月縛り</div>
+        <div class="p-4 text-center text-ink-soft">月単位</div>
+        <div class="p-4 text-center text-ink-soft">月単位</div>
+      </div>
+      <div class="grid grid-cols-5 compare-row text-sm">
+        <div class="p-4 font-semibold">スクリプト</div>
+        <div class="p-4 text-center our">3パターン+A/B</div>
+        <div class="p-4 text-center text-ink-soft">1パターン</div>
+        <div class="p-4 text-center text-ink-soft">1パターン</div>
+        <div class="p-4 text-center text-ink-soft">1パターン</div>
+      </div>
+      <div class="grid grid-cols-5 compare-row text-sm">
+        <div class="p-4 font-semibold">レポート</div>
+        <div class="p-4 text-center our">当日・AI改善案</div>
+        <div class="p-4 text-center text-ink-soft">月次サマリーのみ</div>
+        <div class="p-4 text-center text-ink-soft">Excel一覧</div>
+        <div class="p-4 text-center text-ink-soft">アポ時のみ</div>
+      </div>
+      <div class="grid grid-cols-5 compare-row text-sm">
+        <div class="p-4 font-semibold">地場感覚</div>
+        <div class="p-4 text-center our">沖縄特化</div>
+        <div class="p-4 text-center text-ink-soft">全国一律</div>
+        <div class="p-4 text-center text-ink-soft">全国一律</div>
+        <div class="p-4 text-center text-ink-soft">全国一律</div>
+      </div>
+      <div class="grid grid-cols-5 compare-row text-sm">
+        <div class="p-4 font-semibold">1アポ単価</div>
+        <div class="p-4 text-center our">¥1,000/件</div>
+        <div class="p-4 text-center text-ink-soft">別途見積</div>
+        <div class="p-4 text-center text-ink-soft">別途見積</div>
+        <div class="p-4 text-center text-ink-soft">¥10,000〜30,000</div>
+      </div>
+    </div>
+
+    <div class="mt-12 bg-gradient-to-r from-orange/10 to-gold/10 border border-orange/30 rounded-2xl p-8 text-center reveal">
+      <p class="display-jp text-2xl md:text-3xl">
+        他社が<span class="text-orange">「結果」</span>を売っている間に、<br>
+        CenterCallは<span class="text-orange">「改善するための毎日のデータ」</span>を売っています。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INDUSTRY FIT ===== -->
+<section id="industry" class="py-24 md:py-32 bg-sand">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-12 gap-12 items-center mb-16">
+      <div class="lg:col-span-7 reveal">
+        <div class="section-tag mb-6">08 — Industry Fit</div>
+        <h2 class="display-jp text-4xl md:text-5xl mb-6">
+          あなたの業界で、<br>
+          <span class="text-orange">こう使えます</span>。
+        </h2>
+        <p class="text-ink-soft leading-relaxed text-lg">
+          リフォーム・塗装・看板・WEB制作。<br>
+          各業界に最適化したスクリプト設計を用意します。
+        </p>
+      </div>
+      <div class="lg:col-span-5 reveal reveal-delay-1">
+        <div class="photo-frame" style="height: 280px;">
+          <img src="images/operator-headset-woman.png" alt="女性オペレーター">
+        </div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="industry-card reveal">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="text-4xl">🏗</div>
+          <div>
+            <h3 class="display-jp text-2xl mb-1">リフォーム業</h3>
+            <div class="text-xs text-ink-soft/60 font-inter font-bold tracking-widest uppercase">Target — 不動産管理会社</div>
+          </div>
+        </div>
+        <p class="text-sm text-ink-soft leading-relaxed mb-4">「外壁・水回り・補助金活用」を切り口に、課題ヒアリング型で接点を作る。</p>
+        <div class="bg-cream border-l-4 border-orange rounded-r-xl p-4 italic text-sm">
+          💬 「お住まいの築年数を伺っての、外壁点検の無料診断のご案内です」
+        </div>
+      </div>
+
+      <div class="industry-card reveal reveal-delay-1">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="text-4xl">🎨</div>
+          <div>
+            <h3 class="display-jp text-2xl mb-1">塗装業</h3>
+            <div class="text-xs text-ink-soft/60 font-inter font-bold tracking-widest uppercase">Target — 店舗、不動産管理会社</div>
+          </div>
+        </div>
+        <p class="text-sm text-ink-soft leading-relaxed mb-4">季節要因（台風・梅雨）を絡めた緊急性訴求と、無料診断オファー。</p>
+        <div class="bg-cream border-l-4 border-orange rounded-r-xl p-4 italic text-sm">
+          💬 「台風前の屋根点検と、塗装の劣化チェックを無料でしております」
+        </div>
+      </div>
+
+      <div class="industry-card reveal reveal-delay-2">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="text-4xl">📋</div>
+          <div>
+            <h3 class="display-jp text-2xl mb-1">広告看板業</h3>
+            <div class="text-xs text-ink-soft/60 font-inter font-bold tracking-widest uppercase">Target — 県内中小企業、新規開業</div>
+          </div>
+        </div>
+        <p class="text-sm text-ink-soft leading-relaxed mb-4">求人広告から「拡大期＝看板需要あり」企業を抽出して優先架電。</p>
+        <div class="bg-cream border-l-4 border-orange rounded-r-xl p-4 italic text-sm">
+          💬 「店舗拡大のご予定がある企業様向けに、看板の現地調査のご案内です」
+        </div>
+      </div>
+
+      <div class="industry-card reveal reveal-delay-3">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="text-4xl">💻</div>
+          <div>
+            <h3 class="display-jp text-2xl mb-1">WEB制作業</h3>
+            <div class="text-xs text-ink-soft/60 font-inter font-bold tracking-widest uppercase">Target — サイト未整備の中小企業</div>
+          </div>
+        </div>
+        <p class="text-sm text-ink-soft leading-relaxed mb-4">Custom Search APIで「サイトなし／古い」企業を自動抽出して刺さるリスト化。</p>
+        <div class="bg-cream border-l-4 border-orange rounded-r-xl p-4 italic text-sm">
+          💬 「貴社のWebサイトを拝見し、リニューアルのご提案でお電話しました」
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ETHICS / 行動規範 ===== -->
+<section class="py-24 md:py-32 bg-sunset relative overflow-hidden">
+  <div class="blob-bg" style="width:400px; height:400px; background:#f97316; bottom:-100px; left:-100px;"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="grid lg:grid-cols-12 gap-12 items-center mb-16">
+      <div class="lg:col-span-5 reveal">
+        <div class="photo-frame" style="height: 380px;">
+          <img src="images/operator-headset-2.png" alt="プロフェッショナルなオペレーター">
+        </div>
+      </div>
+      <div class="lg:col-span-7 reveal reveal-delay-1">
+        <div class="section-tag mb-6">09 — Quality & Ethics</div>
+        <h2 class="display-jp text-4xl md:text-5xl mb-6">
+          クライアントブランドを守る、<br>
+          <span class="text-orange">5つの行動規範</span>
+        </h2>
+        <p class="text-ink-soft text-lg leading-relaxed">
+          「外注テレアポは怖い」— その不安を、<br>
+          行動規範で潰しています。
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+      <div class="ethics-item reveal">
+        <div class="ethics-num-big">01</div>
+        <div class="font-bold leading-tight">嘘をつかない</div>
+      </div>
+      <div class="ethics-item reveal reveal-delay-1">
+        <div class="ethics-num-big">02</div>
+        <div class="font-bold leading-tight">強引なクロージングをしない</div>
+      </div>
+      <div class="ethics-item reveal reveal-delay-2">
+        <div class="ethics-num-big">03</div>
+        <div class="font-bold leading-tight">クライアント<br>利益優先</div>
+      </div>
+      <div class="ethics-item reveal reveal-delay-3">
+        <div class="ethics-num-big">04</div>
+        <div class="font-bold leading-tight">架電先への敬意</div>
+      </div>
+      <div class="ethics-item reveal reveal-delay-4">
+        <div class="ethics-num-big">05</div>
+        <div class="font-bold leading-tight">データの透明性</div>
+      </div>
+    </div>
+
+    <div class="mt-12 bg-ink-deep text-white rounded-2xl p-6 md:p-8 flex flex-wrap items-center gap-6 reveal">
+      <div class="font-inter text-xs tracking-widest text-gold font-bold whitespace-nowrap">SAFEGUARD</div>
+      <div class="flex-1 min-w-[280px] text-sm md:text-base">
+        <strong class="text-gold">全通話録音</strong> ／
+        <strong class="text-gold">全文文字起こし</strong> ／
+        <strong class="text-gold">24時間以内クレーム共有</strong>
+        — 不安要素は、仕組みで潰します。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW TO START ===== -->
+<section class="py-24 md:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <div class="section-tag justify-center mb-6">10 — How to Start</div>
+      <h2 class="display-jp text-4xl md:text-6xl mb-6">
+        最短<span class="text-orange">3営業日</span>で稼働開始。
+      </h2>
+      <p class="text-ink-soft text-lg">申し込みから初日の稼働まで、複雑な手続きは一切ありません。</p>
+    </div>
+
+    <div class="grid md:grid-cols-5 gap-6">
+      <div class="feature-card text-center reveal">
+        <div class="text-xs font-inter font-bold uppercase tracking-widest text-orange mb-3">Day 1</div>
+        <div class="num-hero text-5xl text-ink mb-4">1</div>
+        <div class="font-bold mb-2">ヒアリングMTG</div>
+        <p class="text-xs text-ink-soft leading-relaxed">30分Web会議で営業課題・ターゲット・商材の特徴を共有</p>
+      </div>
+      <div class="feature-card text-center reveal reveal-delay-1">
+        <div class="text-xs font-inter font-bold uppercase tracking-widest text-orange mb-3">Day 1-2</div>
+        <div class="num-hero text-5xl text-ink mb-4">2</div>
+        <div class="font-bold mb-2">提案書作成</div>
+        <p class="text-xs text-ink-soft leading-relaxed">推奨プラン・想定アポ数・スクリプト方向性を24-48時間で送付</p>
+      </div>
+      <div class="feature-card text-center reveal reveal-delay-2">
+        <div class="text-xs font-inter font-bold uppercase tracking-widest text-orange mb-3">Day 2</div>
+        <div class="num-hero text-5xl text-ink mb-4">3</div>
+        <div class="font-bold mb-2">電子契約</div>
+        <p class="text-xs text-ink-soft leading-relaxed">クラウドサインでワンクリック契約、初回稼働日を確定</p>
+      </div>
+      <div class="feature-card text-center reveal reveal-delay-3">
+        <div class="text-xs font-inter font-bold uppercase tracking-widest text-orange mb-3">Day 2-3</div>
+        <div class="num-hero text-5xl text-ink mb-4">4</div>
+        <div class="font-bold mb-2">スクリプト構築</div>
+        <p class="text-xs text-ink-soft leading-relaxed">3パターン制作、アタックリスト初期構築、初日打ち合わせ</p>
+      </div>
+      <div class="feature-card text-center reveal reveal-delay-4 bg-orange-glow text-white border-orange">
+        <div class="text-xs font-inter font-bold uppercase tracking-widest text-white mb-3">Day 3</div>
+        <div class="num-hero text-5xl mb-4">5</div>
+        <div class="font-bold mb-2">稼働開始</div>
+        <p class="text-xs leading-relaxed text-white/90">¥11,000の初日、70本架電・全録音、当日中レポート納品</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" class="py-24 md:py-32 bg-sand">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <div class="section-tag justify-center mb-6">11 — FAQ</div>
+      <h2 class="display-jp text-4xl md:text-6xl mb-6">よくいただく<br><span class="text-orange">ご質問</span>。</h2>
+    </div>
+
+    <div class="space-y-2 reveal">
+      <div class="faq-item">
+        <div class="faq-trigger" onclick="toggleFaq(this)">
+          <span>本当に1日¥11,000で試せるんですか？</span>
+          <div class="icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+        <div class="faq-content">
+          <div class="faq-content-inner">初回1回のみ、新規クライアント様向けの特別価格です。2日目以降は¥22,000/日となります。1日試して合わなければそこで終了、追加費用なし。</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-trigger" onclick="toggleFaq(this)">
+          <span>クレームが起きた時は誰が対応？</span>
+          <div class="icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+        <div class="faq-content">
+          <div class="faq-content-inner">CenterCallが一次対応します。即時架電停止 → 録音内容を確認 → 24時間以内にクライアント様へ報告。会社名を名乗らない選択も可能です。</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-trigger" onclick="toggleFaq(this)">
+          <span>リスト（架電先）は自分で用意する必要が？</span>
+          <div class="icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+        <div class="faq-content">
+          <div class="faq-content-inner">不要です。Google Maps API + Custom Search API + 独自リサーチでこちらが構築します。クライアント側のNG企業（競合・取引先）はお申し付けいただければ除外します。</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-trigger" onclick="toggleFaq(this)">
+          <span>録音データは誰が見られるんですか？</span>
+          <div class="icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+        <div class="faq-content">
+          <div class="faq-content-inner">クライアント様とCenterCall担当者のみ。標準1ヶ月保管、契約終了から30日後に完全削除。録音延長オプション（¥5,000/月）で1年保管も可能。</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-trigger" onclick="toggleFaq(this)">
+          <span>アポが取れた後のクロージングはどうする？</span>
+          <div class="icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+        <div class="faq-content">
+          <div class="faq-content-inner">標準では商談はクライアント様で実施。希望される場合はクロージング代行オプション（¥16,000/件 + 成約額の10%）で同席することも可能です。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OUR PROMISE ===== -->
+<section class="py-24 md:py-32 bg-ink-deep text-white relative overflow-hidden">
+  <div class="blob-bg" style="width:400px; height:400px; background:#f97316; top:-100px; right:-100px; opacity:0.15;"></div>
+  <div class="blob-bg" style="width:500px; height:500px; background:#fbbf24; bottom:-200px; left:-200px; opacity:0.1;"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="grid lg:grid-cols-12 gap-12 items-center mb-16">
+      <div class="lg:col-span-7 reveal">
+        <div class="section-tag light mb-6">12 — Our Promise</div>
+        <h2 class="display-jp text-4xl md:text-6xl mb-8">TENOHIRAから、<br>経営者のあなたへ。</h2>
+        <div class="text-6xl text-orange leading-none mb-2">"</div>
+        <p class="text-xl md:text-2xl leading-relaxed text-white/90 italic font-serif">
+          営業代行は「結果」を売る仕事だと、ずっと思われてきました。<br>
+          でも、本当に欲しいのは結果じゃなくて、<br>
+          結果を出し続けられる<strong class="text-gold not-italic">仕組み</strong>じゃないですか。<br>
+          CenterCallは、毎日の電話を「データ資産」として返します。
+        </p>
+      </div>
+      <div class="lg:col-span-5 reveal reveal-delay-1">
+        <div class="photo-frame" style="height: 480px;">
+          <img src="images/call-center-team.png" alt="プロフェッショナルなコールセンターチーム">
+        </div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="commitment-card reveal">
+        <div class="text-xs font-inter font-bold tracking-widest text-gold mb-4">Commitment 01</div>
+        <h3 class="display-jp text-2xl mb-4">初日でデータを<br>出します</h3>
+        <p class="text-white/70 text-sm leading-relaxed">初日¥11,000の中で、必ず1本以上の文字起こし＆AI改善提案を返します。「お試し」を、形だけのものにしません。</p>
+      </div>
+      <div class="commitment-card reveal reveal-delay-1">
+        <div class="text-xs font-inter font-bold tracking-widest text-gold mb-4">Commitment 02</div>
+        <h3 class="display-jp text-2xl mb-4">クライアント名で<br>恥はかかせません</h3>
+        <p class="text-white/70 text-sm leading-relaxed">全通話録音 + 行動規範5箇条で、クライアント様のブランドを守ります。万一のクレームは24時間以内に必ず共有します。</p>
+      </div>
+      <div class="commitment-card reveal reveal-delay-2">
+        <div class="text-xs font-inter font-bold tracking-widest text-gold mb-4">Commitment 03</div>
+        <h3 class="display-jp text-2xl mb-4">成功したら、<br>もっと攻めます</h3>
+        <p class="text-white/70 text-sm leading-relaxed">アポ獲得が走り出したら、月20日（プレミアム）への移行や、クロージング代行も提案します。成長の伴走者になります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA FINAL ===== -->
+<section id="contact" class="py-32 md:py-40 bg-sun-fade relative overflow-hidden">
+  <div class="blob-bg" style="width:600px; height:600px; background:#fbbf24; top:-200px; right:-200px;"></div>
+  <div class="blob-bg" style="width:500px; height:500px; background:#f97316; bottom:-200px; left:-200px; opacity:0.3;"></div>
+
+  <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+    <div class="section-tag justify-center mb-8 reveal">Let's Start</div>
+    <h2 class="display-jp text-5xl md:text-8xl mb-8 reveal reveal-delay-1">
+      まず、<span class="text-orange italic">1日だけ</span><br>
+      やってみませんか。
+    </h2>
+    <p class="text-lg md:text-xl text-ink-soft leading-relaxed mb-12 reveal reveal-delay-2">
+      ¥11,000で1日70本架電、全録音、AI分析レポート、明日の改善提案まで。<br>
+      合わなければ、そこで終わり。<strong class="text-ink">損することはありません。</strong>
+    </p>
+    <div class="flex flex-wrap gap-4 justify-center mb-12 reveal reveal-delay-3">
+      <a href="mailto:1116maehira@gmail.com?subject=【CenterCall】お問い合わせ&body=以下にご記入の上、ご送信ください。%0A%0A■ 会社名:%0A■ お名前:%0A■ ご連絡先（電話 or メール）:%0A■ 業種:%0A■ ご相談内容（営業課題など）:%0A" class="btn-primary text-lg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+        メールで問い合わせる
+      </a>
+      <a href="tel:098-953-2728" class="btn-secondary text-lg">
+        📞 098-953-2728
+      </a>
+    </div>
+    <p class="text-sm text-ink-soft/60 font-inter tracking-wide reveal reveal-delay-4">
+      返信は最短当日、遅くとも翌営業日中に。
+    </p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-ink text-white py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-12 mb-12">
+      <div>
+        <div class="display-jp text-3xl mb-4">CenterCall</div>
+        <p class="text-white/60 text-sm leading-relaxed">電話営業を、データで変える。<br>沖縄の中小企業のための、新しい外注テレアポ。</p>
+      </div>
+      <div>
+        <div class="text-xs font-inter font-bold tracking-widest text-gold mb-4 uppercase">Company</div>
+        <div class="text-sm text-white/80 leading-loose">
+          株式会社TENOHIRA<br>
+          代表 前平雄一朗<br>
+          〒901-2223<br>
+          沖縄県宜野湾市大山2丁目21-5<br>
+          サニーパートナー宜野湾 3-A
+        </div>
+      </div>
+      <div>
+        <div class="text-xs font-inter font-bold tracking-widest text-gold mb-4 uppercase">Contact</div>
+        <div class="text-sm text-white/80 leading-loose">
+          <a href="mailto:1116maehira@gmail.com" class="hover:text-orange transition-colors">1116maehira@gmail.com</a><br>
+          <a href="tel:098-953-2728" class="hover:text-orange transition-colors">TEL: 098-953-2728</a><br>
+          <span class="text-white/50">営業時間 平日 9:00-18:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-white/10 flex flex-wrap justify-between items-center gap-4 text-xs font-inter tracking-wide text-white/40">
+      <div>© 2026 株式会社TENOHIRA. All rights reserved.</div>
+      <div>CenterCall — Telesales × AI × Okinawa</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // FAQ
+  function toggleFaq(triggerEl) {
+    const item = triggerEl.parentElement;
+    const content = item.querySelector('.faq-content');
+    item.classList.toggle('open');
+    if (item.classList.contains('open')) {
+      content.style.maxHeight = content.scrollHeight + 'px';
+    } else {
+      content.style.maxHeight = '0';
+    }
+  }
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      if (id === '#') return;
+      const el = document.querySelector(id);
+      if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+</script>
+
+</body>
+</html>
